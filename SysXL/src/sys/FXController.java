@@ -20,7 +20,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Alert.AlertType;
 
 public class FXController implements Initializable {
@@ -52,28 +51,30 @@ public class FXController implements Initializable {
 	@FXML
 	private Label lblDolomiaSysfogo;
 
-
-
 	private int line = 1;
 
-	private double percent = 0;
+	private int percent = 0;
 
 	Integer year = Calendar.getInstance().get(Calendar.YEAR);
+	Integer year2 = 2017;
 
 	static SysXL version = new SysXL();
 
 	ObservableList<String> SelectMonth = FXCollections.observableArrayList("Escolha", "Janeiro", "Fevereiro", "Março",
 			"Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro");
 
-	ObservableList<String> SelectYear = FXCollections.observableArrayList("Escolha", "2017", "2018", "2019", "2020",
-			"2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030");
-
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		chcMonth.getItems().addAll(SelectMonth);
-		chcYear.getItems().addAll(SelectYear);
 		chcMonth.setValue("Escolha");
 		chcYear.setValue("Escolha");
+		ObservableList<String> SelectYear = FXCollections.observableArrayList();
+		while (year2 <= year) {
+
+			chcYear.getItems().add(year2.toString());
+			year2++;
+		}
+		chcMonth.getItems().addAll(SelectMonth);
+		chcYear.getItems().addAll(SelectYear);
 		System.out.println("ChoiceBox Values added.");
 		lblAnoAutomatico.setText(year.toString());
 	}
@@ -85,14 +86,15 @@ public class FXController implements Initializable {
 
 	public void actionHelp() throws Exception {
 		Alert alert = new Alert(AlertType.INFORMATION);
-		alert.setTitle("SysXL " + version.getVersion() + " - Help");
+		alert.setTitle(version.getVersion() + " - Help");
 		alert.setResizable(true);
 		alert.setHeaderText("ATENÇÃO");
 		alert.setContentText("Para editar login, senha, IP ou Diretorio:"
-				+ "\n1. Vá em C:\\SysXL\\ e abra o arquivo 'file.txt';" + "\n2. Edite os parâmetros que deseja.\n"
-				+ "\nObservações:" + "\nCada linha está reservada com um parametro:"
-				+ "\n1º Linha: url/IP para acesso ao banco de dados;" + "\n2º Linha: usuario do banco de dados;"
-				+ "\n3º Linha: senha do banco de dados;" + "\n4º Linha: Diretorio onde será salvo.");
+				+ "\n1. Vá em C:\\Arquivo de Programa\\SysXL\\ e abra o arquivo 'file.txt';"
+				+ "\n2. Edite os parâmetros que deseja.\n" + "\nObservações:"
+				+ "\nCada linha está reservada com um parametro:" + "\n1º Linha: url/IP para acesso ao banco de dados;"
+				+ "\n2º Linha: usuario do banco de dados;" + "\n3º Linha: senha do banco de dados;"
+				+ "\n4º Linha: Diretorio onde será salvo.");
 		alert.show();
 	}
 
@@ -113,21 +115,21 @@ public class FXController implements Initializable {
 		callingUser.fileTxt(1);
 		String userCalled = callingUser.getValueTxt();
 		String user = userCalled; // DB user;
-		System.out.println("Your username = " + user);
+		System.out.println("Your username = *****");
 		Thread.sleep(500);
 
 		SysXL callingPw = new SysXL();
 		callingPw.fileTxt(2);
 		String userPw = callingPw.getValueTxt();
 		String passwd = userPw; // DB password;
-		System.out.println("Your password = " + passwd);
+		System.out.println("Your password = *****");
 		Thread.sleep(500);
 
 		SysXL callingIP = new SysXL();
 		callingIP.fileTxt(0);
 		String ipCalled = callingIP.getValueTxt();
 		String url = ipCalled; // JDBC + IPv4 DB.
-		System.out.println("Your IP / url = " + url);
+		System.out.println("Your IP = *****");
 		Thread.sleep(500);
 
 		SysXL callingPath = new SysXL();
@@ -225,11 +227,17 @@ public class FXController implements Initializable {
 		/*
 		 * Trying to connect to MysqlDB
 		 */
-		System.out.println("[MYSQL] Trying to connecto to the DB");
+		System.out.println("[MYSQL] Trying to connecto to the DB\n");
 		Thread.sleep(1000);
 
 		try (Connection conn = DriverManager.getConnection(url, user, passwd)) {
-			System.out.println("Connected!\n");
+			System.out.println("          __   _,--=\"=--,_   __\n" + "         /  \\.\"    .-.    \"./  \\\n"
+					+ "        /  ,/  _   : :   _  \\/` \\\n" + "        \\  `| /o\\  :_:  /o\\ |\\__/\n"
+					+ "         `-'| :=\"~` _ `~\"=: |\n" + "            \\`     (_)     `/\n"
+					+ "     .-\"-.   \\      |      /   .-\"-.\n" + ".---{     }--|  /,.-'-.,\\  |--{     }---.\n"
+					+ " )  (_)_)_)  \\_/`~-===-~`\\_/  (_(_(_)  (\n" + "(         CONNECTED INTO MYSQL          )\n"
+					+ " )                                     (\n" + "'---------------------------------------'\n"
+					+ "\n");
 			Thread.sleep(500);
 			/*
 			 * Trying to run a Query
@@ -304,8 +312,8 @@ public class FXController implements Initializable {
 				System.out.println("             .--,       .--,\n" + "            ( (  \\.---./  ) )\n"
 						+ "             '.__/o   o\\__.'\n" + "                {=  ^  =}\n"
 						+ "                 >  -  <\n" + " ____________.\"\"`-------`\"\".____________\n"
-						+ "/                                       \\\n" + "\\ Thanks for using SysXL "
-						+ version.getVersion() + "  /\n" + "/                                       \\\n"
+						+ "/                                       \\\n" + "\\ Thanks for using " + version.getVersion()
+						+ "        /\n" + "/                                       \\\n"
 						+ "\\_______________________________________/\n" + "               ___)( )(___\n"
 						+ "              (((__) (__)))");
 

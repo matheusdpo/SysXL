@@ -12,7 +12,7 @@ public class SysXL {
 	public void fileTxt(int numberLine) {
 
 		try {
-			File text = new File("/home/matheus/Downloads/file.txt");
+			File text = new File("/home/matheus/SysXL/file.txt");
 			Scanner reading = new Scanner(text);
 			int i;
 			for (i = 0; i <= numberLine; i++) {

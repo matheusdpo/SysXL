@@ -4,7 +4,7 @@
 
 .buttons {
 	-fx-background-color: #27156a;
-	-fx-background-radius: 20px;
+	-fx-background-radius: 20.0px;
 }
 
 .button:hover{
@@ -17,21 +17,20 @@
 }
 
 .context-menu{
-		-fx-background-color: #27156a;
-}
-.cboxes>.label {
-	-fx-text-fill: white;
+	-fx-background-color: #27156a;
 }
 
-.choice-box .menu-item:focused { -fx-background-color: #F57C1E; }
-.choice-box .menu-item > .label { -fx-text-fill: white; }
+.choice-box .menu-item:focused {
+	-fx-background-color: #F57C1E;
+}
+.choice-box .menu-item > .label, .hlink:visited, .cboxes>.label {
+	-fx-text-fill: #FFFFFF;
+}
 
 .labels {
 	
 }
 
-.hlink:hover, .hlink:active {
-	-fx-text-fill: #05d6dd;
-	
-	
+.hlink:hover {
+	-fx-text-fill: #05d6dd;	
 }
