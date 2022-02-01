@@ -4,17 +4,12 @@ import java.awt.Desktop;
 import java.io.FileOutputStream;
 import java.net.URI;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.Calendar;
 import java.util.ResourceBundle;
-
 import org.apache.poi.hssf.usermodel.HSSFRow;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -58,6 +53,8 @@ public class FXController implements Initializable {
 	private int line = 1;
 
 	private int percent = 0;
+	
+	Integer year = Calendar.getInstance().get(Calendar.YEAR);
 
 	static SysXL version = new SysXL();
 
@@ -69,12 +66,12 @@ public class FXController implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		System.out.println("Adding ChoiceBox Values...");
 		chcMonth.getItems().addAll(SelectMonth);
 		chcYear.getItems().addAll(SelectYear);
 		chcMonth.setValue("Escolha");
 		chcYear.setValue("Escolha");
-		System.out.println("ChoiceBox Values added.\n");
+		System.out.println("ChoiceBox Values added.");
+		lblAnoAutomatico.setText(year.toString());
 	}
 
 	public void actionDonate() throws Exception {
@@ -96,30 +93,39 @@ public class FXController implements Initializable {
 	}
 
 	public void actionConverter() throws Exception {
-
+		
+		System.out.print("\n\nYour import will be started in: ");
+		Thread.sleep(1500);
+		System.out.println("now\n\n");
+		System.out.println("[MYSQL] INFO:");
+		Thread.sleep(500);
 		SysXL callingUser = new SysXL();
 		callingUser.fileTxt(1);
 		String userCalled = callingUser.getValueTxt();
 		String user = userCalled; // DB user;
 		System.out.println("Your username = " + user);
-
+		Thread.sleep(500);
+		
 		SysXL callingPw = new SysXL();
 		callingPw.fileTxt(2);
 		String userPw = callingPw.getValueTxt();
 		String passwd = userPw; // DB password;
 		System.out.println("Your password = " + passwd);
-
+		Thread.sleep(500);
+		
 		SysXL callingIP = new SysXL();
 		callingIP.fileTxt(0);
 		String ipCalled = callingIP.getValueTxt();
 		String url = ipCalled; // JDBC + IPv4 DB.
 		System.out.println("Your IP / url = " + url);
-
+		Thread.sleep(500);
+		
 		SysXL callingPath = new SysXL();
 		callingPath.fileTxt(3);
 		String pathCalled = callingPath.getValueTxt();
-		System.out.println("Your Path = " + pathCalled);
-
+		System.out.println("Your Path = " + pathCalled +"\n\n");
+		Thread.sleep(500);
+		
 		/*
 		 * Algorithm to create Sysfogo report.xls
 		 */
@@ -150,14 +156,16 @@ public class FXController implements Initializable {
 					+ "ON b.id = a.id INNER JOIN tim_fogo_item c ON b.cod_produto = c.cod_produto " + "WHERE ano = "
 					+ yearQuery + " and mes = " + "0" + monthQuery + " AND b.iis_pai is NULL";
 			select = selectTST;
-			System.out.println("if/else for select runned");
+			System.out.println("[SELECT] if/else for select runned");
+			Thread.sleep(1000);
 		} else {
 			String selectTST = "SELECT a.cnpj_fornecedor, a.num_nf, a.guia_trafego, b.cod_produto, c.den_item, "
 					+ "b.iis_embal, a.dat_exportacao FROM tim_fogo_nf_mestre a INNER JOIN tim_fogo_nf_item_embal b "
 					+ "ON b.id = a.id INNER JOIN tim_fogo_item c ON b.cod_produto = c.cod_produto " + "WHERE ano = "
 					+ yearQuery + " and mes = " + monthQuery + " AND b.iis_pai is NULL";
 			select = selectTST;
-			System.out.println("if/else for select runned");
+			System.out.println("[SELECT] if/else for select runned");
+			Thread.sleep(1000);
 		}
 
 		/*
@@ -166,28 +174,32 @@ public class FXController implements Initializable {
 		if (monthQuery < 10 && monthQuery >= 1) {
 			String pathTST = pathCalled + "0" + monthQuery + "-" + yearQuery + " IIS.xls";
 			path = pathTST;
-			System.out.println("if/else for folder and file name runned");
-			System.out.println("Your file will be saved in = " + path);
+			System.out.println("[JAVA] INFO:");
+			System.out.println("[JAVA] if/else for folder and file name runned");
+			System.out.println("[JAVA] Your file will be saved in = " + path);
+			Thread.sleep(1000);
 		} else {
 			String pathTST = pathCalled + monthQuery + "-" + yearQuery + " IIS.xls";
 			path = pathTST;
-			System.out.println("if/else for folder and file name runned");
-			System.out.println("Your file will be saved in = " + path);
+			System.out.println("[JAVA] INFO:");
+			System.out.println("[JAVA] if/else for folder and file name runned");
+			System.out.println("[JAVA] Your file will be saved in = " + path);
+			Thread.sleep(1000);
 		}
 
 		/*
 		 * Starting POI Apache API Creating Excel File
 		 */
-		System.out.println("Excel file has been created.\n");
+		
 		HSSFWorkbook sysheet = new HSSFWorkbook();
 		HSSFSheet sheet = sysheet.createSheet("Sysfogo"); // Title
 		HSSFRow header = sheet.createRow((short) 0); // Line
-		System.out.println("Excel file has been created.\n");
+		System.out.println("[POI] Excel file has been created.");
+		Thread.sleep(1000);
 
 		/*
 		 * Column and Header/Title
 		 */
-		System.out.println("Adding the Header/Title.\n");
 		header.createCell(0).setCellValue("cnpj_fornecedor");
 		header.createCell(1).setCellValue("num_nf");
 		header.createCell(2).setCellValue("guia_trafego");
@@ -195,32 +207,39 @@ public class FXController implements Initializable {
 		header.createCell(4).setCellValue("den_item");
 		header.createCell(5).setCellValue("iis_embal");
 		header.createCell(6).setCellValue("dat_exportacao");
-
+		System.out.println("[POI] Header/Title in excel added.");
+		Thread.sleep(1000);
+		
 		/*
 		 * Trying to connect to MysqlDB
 		 */
-		System.out.println("Trying to connecto to the DB");
+		System.out.println("[MYSQL] Trying to connecto to the DB");
+		Thread.sleep(1000);
 		System.out.println(url);
 		System.out.println(user);
 		System.out.println(passwd);
 		try (Connection conn = DriverManager.getConnection(url, user, passwd)) {
 			System.out.println("Connected!\n");
+			Thread.sleep(500);
 			/*
 			 * Trying to run a Query
 			 */
 			System.out.println("Trying to run a Query");
+			Thread.sleep(1000);
 			try (PreparedStatement stmt = conn.prepareStatement(select)) {
 				ResultSet data = stmt.executeQuery();
 				/*
 				 * Copying data from DB to Excel
 				 */
 
-				System.out.println("Selected executed\n");
+				System.out.println("Selected executed");
+				Thread.sleep(1000);
 
 				/*
 				 * While there are files, add one more line
 				 */
 				System.out.println("Copying data from DB to Excel");
+				Thread.sleep(1000);
 				while (data.next()) {
 					/*
 					 * Getting the DB Data and putting into Excel
@@ -256,6 +275,7 @@ public class FXController implements Initializable {
 						System.out.println("Loading files: 100%\n");
 					} else {
 						System.out.println("Loading files: " + this.percent + "%\n");
+						Thread.sleep(500);
 					}
 				}
 
@@ -263,13 +283,42 @@ public class FXController implements Initializable {
 				 * Finishing the file
 				 */
 				System.out.println("Done!!!\n");
+				Thread.sleep(1000);
 				Alert alert = new Alert(AlertType.CONFIRMATION);
 				alert.setTitle(version.getVersion() + " - Concluído");
 				alert.setHeaderText("Exportação concluída com sucesso =)");
-				alert.setContentText("Seu arquivo foi exportado para o diretorio:\n" + path);
+				alert.setContentText("Seu arquivo foi exportado para o diretorio:\n\n" + path);
+				Thread.sleep(1000);
+				System.out.println("             .--,       .--,\n"
+						+ "            ( (  \\.---./  ) )\n"
+						+ "             '.__/o   o\\__.'\n"
+						+ "                {=  ^  =}\n"
+						+ "                 >  -  <\n"
+						+ " ____________.\"\"`-------`\"\".____________\n"
+						+ "/                                       \\\n"
+						+ "\\ Thanks for using SysXL "+version.getVersion()+"  /\n"
+						+ "/                                       \\\n"
+						+ "\\_______________________________________/\n"
+						+ "               ___)( )(___\n"
+						+ "              (((__) (__)))");
+				
 				alert.show();
 			} catch (SQLException e) {
 				System.out.println("SELECT failed!");
+				System.out.println("                            _ ._  _ , _ ._\n"
+						+ "                          (_ ' ( `  )_  .__)\n"
+						+ "                        ( (  (    )   `)  ) _)\n"
+						+ "                       (__ (_   (_ . _) _) ,__)\n"
+						+ "                           `~~`\\ ' . /`~~`\n"
+						+ "                           ,::: ;   ; :::,\n"
+						+ "                          ':::::::::::::::'\n"
+						+ "     _________________________/_ __ \\________________________\n"
+						+ "    |                                                         |\n"
+						+ "    |                       SELECTED FAILED!                  |\n"
+						+ "    |_________________________________________________________|\n"
+						+ "\n"
+						+ "\n"
+						+ "");
 				Alert alert = new Alert(AlertType.ERROR);
 				alert.setTitle(version.getVersion() + " - Erro de Banco de Dados");
 				alert.setHeaderText("Ops... temos um erro =(");
@@ -278,7 +327,20 @@ public class FXController implements Initializable {
 				alert.show();
 			}
 		} catch (SQLException e1) {
-			System.out.println("Connection failed!");
+			System.out.println("                            _ ._  _ , _ ._\n"
+					+ "                          (_ ' ( `  )_  .__)\n"
+					+ "                        ( (  (    )   `)  ) _)\n"
+					+ "                       (__ (_   (_ . _) _) ,__)\n"
+					+ "                           `~~`\\ ' . /`~~`\n"
+					+ "                           ,::: ;   ; :::,\n"
+					+ "                          ':::::::::::::::'\n"
+					+ "     _________________________/_ __ \\________________________\n"
+					+ "    |                                                         |\n"
+					+ "    |                       CONNECTION FAILED                 |\n"
+					+ "    |_________________________________________________________|\n"
+					+ "\n"
+					+ "\n"
+					+ "");
 			e1.printStackTrace();
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.setTitle(version.getVersion() + " - Erro de Conexão");

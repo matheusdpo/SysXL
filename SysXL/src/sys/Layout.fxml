@@ -17,7 +17,7 @@
       <ChoiceBox fx:id="chcYear" layoutX="226.0" layoutY="226.0" prefWidth="150.0" />
       <Label fx:id="lblMes" layoutX="79.0" layoutY="207.0" text="Mês:" />
       <Label fx:id="lblAno" layoutX="286.0" layoutY="207.0" text="Ano:" />
-      <Label fx:id="lblAnoAutomatico" layoutX="181.0" layoutY="170.0" text="2022" />
+      <Label fx:id="lblAnoAutomatico" layoutX="181.0" layoutY="170.0" text="0000" />
       <Label fx:id="lblDolomiaSysfogo" layoutX="138.0" layoutY="154.0" text="Dolomia &amp; Sysfogo" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="102.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>

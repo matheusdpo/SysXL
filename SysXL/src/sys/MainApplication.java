@@ -6,25 +6,35 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class ElMainApplication extends Application {
+public class MainApplication extends Application {
 	static SysXL version = new SysXL();
 
 	@Override
 	public void start(Stage primaryStage) {
 		try {
 			AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("Layout.fxml"));
+			System.out.println("Layout.fxml loaded");
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
 			primaryStage.setTitle(version.getVersion());
 			primaryStage.setResizable(false);
 			primaryStage.show();
+			System.out.println("SysXL loaded");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		System.out.println(version.getVersion() + " has been started");
+	//	Thread.sleep(2000);
+System.out.println(" __________________________\n"
+		+ "/\\                         \\\n"
+		+ "\\_| WELCOME TO SYSXL       |\n"
+		+ "  |                        |\n"
+		+ "  | Version: "+version.getVersion()+" |\n"
+		+ "  |   _____________________|_\n"
+		+ "   \\_/_______________________/\n");
 		launch(args);
 		
 	}

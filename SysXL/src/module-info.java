@@ -6,7 +6,6 @@ module sys {
 	requires java.desktop;
 	requires org.apache.poi.poi;
 	requires java.sql;
-
 	exports sys to javafx.graphics, javafx.fxml;
 
 	opens sys to javafx.fxml;
