@@ -6,7 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class MainApplication extends Application {
+public class ElMainApplication extends Application {
 	static SysXL version = new SysXL();
 
 	@Override
