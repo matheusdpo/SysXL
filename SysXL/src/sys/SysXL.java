@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class SysXL {
 	private String valueTxt;
 
-	private static final String version = "SysXL - 22.01";
+	private static final String version = "SysXL - 22.02";
 
 	@SuppressWarnings("resource")
 	public void fileTxt(int numberLine) {
