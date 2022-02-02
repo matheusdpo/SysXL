@@ -99,6 +99,7 @@ public class FXController implements Initializable {
 		System.out.println("now\n\n");
 		System.out.println("[MYSQL] INFO:");
 		Thread.sleep(500);
+		
 		SysXL callingUser = new SysXL();
 		callingUser.fileTxt(1);
 		String userCalled = callingUser.getValueTxt();
