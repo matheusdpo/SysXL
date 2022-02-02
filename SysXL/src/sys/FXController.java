@@ -2,6 +2,7 @@ package sys;
 
 import java.awt.Desktop;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.net.URI;
 import java.net.URL;
 import java.sql.*;
@@ -19,6 +20,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Alert.AlertType;
 
 public class FXController implements Initializable {
@@ -50,10 +52,12 @@ public class FXController implements Initializable {
 	@FXML
 	private Label lblDolomiaSysfogo;
 
+
+
 	private int line = 1;
 
-	private int percent = 0;
-	
+	private double percent = 0;
+
 	Integer year = Calendar.getInstance().get(Calendar.YEAR);
 
 	static SysXL version = new SysXL();
@@ -92,41 +96,46 @@ public class FXController implements Initializable {
 		alert.show();
 	}
 
-	public void actionConverter() throws Exception {
-		
-		System.out.print("\n\nYour import will be started in: ");
-		Thread.sleep(1500);
-		System.out.println("now\n\n");
+	public void actionConverter() throws IOException, InterruptedException {
+
+		System.out.print("\n\nYour import will be started in: 3, ");
+		Thread.sleep(1000);
+		System.out.print("2, ");
+		Thread.sleep(1000);
+		System.out.print("1...");
+		Thread.sleep(1000);
+		System.out.println(" NOW!\n");
+		Thread.sleep(100);
 		System.out.println("[MYSQL] INFO:");
 		Thread.sleep(500);
-		
+
 		SysXL callingUser = new SysXL();
 		callingUser.fileTxt(1);
 		String userCalled = callingUser.getValueTxt();
 		String user = userCalled; // DB user;
 		System.out.println("Your username = " + user);
 		Thread.sleep(500);
-		
+
 		SysXL callingPw = new SysXL();
 		callingPw.fileTxt(2);
 		String userPw = callingPw.getValueTxt();
 		String passwd = userPw; // DB password;
 		System.out.println("Your password = " + passwd);
 		Thread.sleep(500);
-		
+
 		SysXL callingIP = new SysXL();
 		callingIP.fileTxt(0);
 		String ipCalled = callingIP.getValueTxt();
 		String url = ipCalled; // JDBC + IPv4 DB.
 		System.out.println("Your IP / url = " + url);
 		Thread.sleep(500);
-		
+
 		SysXL callingPath = new SysXL();
 		callingPath.fileTxt(3);
 		String pathCalled = callingPath.getValueTxt();
-		System.out.println("Your Path = " + pathCalled +"\n\n");
+		System.out.println("Your Path = " + pathCalled + "\n\n");
 		Thread.sleep(500);
-		
+
 		/*
 		 * Algorithm to create Sysfogo report.xls
 		 */
@@ -158,6 +167,7 @@ public class FXController implements Initializable {
 					+ yearQuery + " and mes = " + "0" + monthQuery + " AND b.iis_pai is NULL";
 			select = selectTST;
 			System.out.println("[SELECT] if/else for select runned");
+			System.out.println(select + "\n");
 			Thread.sleep(1000);
 		} else {
 			String selectTST = "SELECT a.cnpj_fornecedor, a.num_nf, a.guia_trafego, b.cod_produto, c.den_item, "
@@ -166,6 +176,7 @@ public class FXController implements Initializable {
 					+ yearQuery + " and mes = " + monthQuery + " AND b.iis_pai is NULL";
 			select = selectTST;
 			System.out.println("[SELECT] if/else for select runned");
+			System.out.println(select + "\n");
 			Thread.sleep(1000);
 		}
 
@@ -191,7 +202,7 @@ public class FXController implements Initializable {
 		/*
 		 * Starting POI Apache API Creating Excel File
 		 */
-		
+
 		HSSFWorkbook sysheet = new HSSFWorkbook();
 		HSSFSheet sheet = sysheet.createSheet("Sysfogo"); // Title
 		HSSFRow header = sheet.createRow((short) 0); // Line
@@ -210,15 +221,13 @@ public class FXController implements Initializable {
 		header.createCell(6).setCellValue("dat_exportacao");
 		System.out.println("[POI] Header/Title in excel added.");
 		Thread.sleep(1000);
-		
+
 		/*
 		 * Trying to connect to MysqlDB
 		 */
 		System.out.println("[MYSQL] Trying to connecto to the DB");
 		Thread.sleep(1000);
-		System.out.println(url);
-		System.out.println(user);
-		System.out.println(passwd);
+
 		try (Connection conn = DriverManager.getConnection(url, user, passwd)) {
 			System.out.println("Connected!\n");
 			Thread.sleep(500);
@@ -260,10 +269,12 @@ public class FXController implements Initializable {
 					rowDB.createCell(4).setCellValue(denItem);
 					rowDB.createCell(5).setCellValue(IISEmbal);
 					rowDB.createCell(6).setCellValue(datExportacao);
+
 					FileOutputStream fileOut = new FileOutputStream(path);
 					sysheet.write(fileOut);
 					fileOut.close();
 					sysheet.close();
+
 					this.line++;
 					this.percent++;
 
@@ -276,7 +287,7 @@ public class FXController implements Initializable {
 						System.out.println("Loading files: 100%\n");
 					} else {
 						System.out.println("Loading files: " + this.percent + "%\n");
-						Thread.sleep(500);
+						Thread.sleep(100);
 					}
 				}
 
@@ -290,19 +301,14 @@ public class FXController implements Initializable {
 				alert.setHeaderText("Exportação concluída com sucesso =)");
 				alert.setContentText("Seu arquivo foi exportado para o diretorio:\n\n" + path);
 				Thread.sleep(1000);
-				System.out.println("             .--,       .--,\n"
-						+ "            ( (  \\.---./  ) )\n"
-						+ "             '.__/o   o\\__.'\n"
-						+ "                {=  ^  =}\n"
-						+ "                 >  -  <\n"
-						+ " ____________.\"\"`-------`\"\".____________\n"
-						+ "/                                       \\\n"
-						+ "\\ Thanks for using SysXL "+version.getVersion()+"  /\n"
-						+ "/                                       \\\n"
-						+ "\\_______________________________________/\n"
-						+ "               ___)( )(___\n"
+				System.out.println("             .--,       .--,\n" + "            ( (  \\.---./  ) )\n"
+						+ "             '.__/o   o\\__.'\n" + "                {=  ^  =}\n"
+						+ "                 >  -  <\n" + " ____________.\"\"`-------`\"\".____________\n"
+						+ "/                                       \\\n" + "\\ Thanks for using SysXL "
+						+ version.getVersion() + "  /\n" + "/                                       \\\n"
+						+ "\\_______________________________________/\n" + "               ___)( )(___\n"
 						+ "              (((__) (__)))");
-				
+
 				alert.show();
 			} catch (SQLException e) {
 				System.out.println("SELECT failed!");
@@ -316,10 +322,7 @@ public class FXController implements Initializable {
 						+ "     _________________________/_ __ \\________________________\n"
 						+ "    |                                                         |\n"
 						+ "    |                       SELECTED FAILED!                  |\n"
-						+ "    |_________________________________________________________|\n"
-						+ "\n"
-						+ "\n"
-						+ "");
+						+ "    |_________________________________________________________|\n" + "\n" + "\n" + "");
 				Alert alert = new Alert(AlertType.ERROR);
 				alert.setTitle(version.getVersion() + " - Erro de Banco de Dados");
 				alert.setHeaderText("Ops... temos um erro =(");
@@ -332,16 +335,12 @@ public class FXController implements Initializable {
 					+ "                          (_ ' ( `  )_  .__)\n"
 					+ "                        ( (  (    )   `)  ) _)\n"
 					+ "                       (__ (_   (_ . _) _) ,__)\n"
-					+ "                           `~~`\\ ' . /`~~`\n"
-					+ "                           ,::: ;   ; :::,\n"
+					+ "                           `~~`\\ ' . /`~~`\n" + "                           ,::: ;   ; :::,\n"
 					+ "                          ':::::::::::::::'\n"
 					+ "     _________________________/_ __ \\________________________\n"
 					+ "    |                                                         |\n"
 					+ "    |                       CONNECTION FAILED                 |\n"
-					+ "    |_________________________________________________________|\n"
-					+ "\n"
-					+ "\n"
-					+ "");
+					+ "    |_________________________________________________________|\n" + "\n" + "\n" + "");
 			e1.printStackTrace();
 			Alert alert = new Alert(AlertType.WARNING);
 			alert.setTitle(version.getVersion() + " - Erro de Conexão");

@@ -12,9 +12,12 @@ public class MainApplication extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("Layout.fxml"));
+			AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("Layout2.fxml"));
+			
 			System.out.println("Layout.fxml loaded");
 			Scene scene = new Scene(root);
+			//scene.getStylesheets().add(getClass().getResource("Layout.css").toExternalForm());
+			System.out.println("Layout.css loaded");
 			primaryStage.setScene(scene);
 			primaryStage.setTitle(version.getVersion());
 			primaryStage.setResizable(false);
