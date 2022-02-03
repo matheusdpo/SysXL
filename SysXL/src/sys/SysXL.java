@@ -15,11 +15,17 @@ public class SysXL {
 	public void fileTxt(int numberLine) {
 
 		try {
-			File text = new File(
-					"/home/matheus/SysXL/file.txt"); /*
-													  * file.txt will save important information, such as database
-													  * information and the folder where the file will be saved.
-													  */
+			if(System.getProperty("os.name") == "Linux") {
+				File text = new File(
+						"/home/matheus/SysXL/file.txt"); /*
+														  * file.txt will save important information, such as database
+														  * information and the folder where the file will be saved.
+														  */
+			}
+			else {
+				
+			}
+			
 			Scanner reading = new Scanner(text);
 			int i;
 			for (i = 0; i <= numberLine; i++) {
