@@ -2,37 +2,30 @@ package sys;
 
 import java.io.File;
 import java.util.Scanner;
-
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
 public class SysXL {
 	private String valueTxt;
 
-	private static final String version = "SysXL - 22.02"; // easy to change the version.
+	private static final String version = "SysXL - 22.02.1"; /* easy to change and show the version */
 
 	@SuppressWarnings("resource")
 	public void fileTxt(int numberLine) {
 
 		try {
-			if(System.getProperty("os.name") == "Linux") {
-				File text = new File(
-						"/home/matheus/SysXL/file.txt"); /*
-														  * file.txt will save important information, such as database
-														  * information and the folder where the file will be saved.
-														  */
-			}
-			else {
-				
-			}
-			
+			File text = new File("/home/matheus/SysXL/file.txt");
+			/*
+			 * file.txt will save important information, such as database information and
+			 * the folder where the file will be saved.
+			 */
+
 			Scanner reading = new Scanner(text);
 			int i;
 			for (i = 0; i <= numberLine; i++) {
 				valueTxt = reading.nextLine();
 				if (i != numberLine) {
 					continue;
-				} else {
 				}
 			}
 		} catch (Exception e) {
@@ -42,9 +35,9 @@ public class SysXL {
 	}
 
 	public void alertSystem(String title, String header, String content) {
-		
+
 		/* Less code when i call a Warning */
-		
+
 		Alert alert = new Alert(AlertType.INFORMATION);
 		alert.setTitle(version + title);
 		alert.setResizable(true);

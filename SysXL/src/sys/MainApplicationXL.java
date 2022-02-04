@@ -1,5 +1,6 @@
 package sys;
 
+import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -24,11 +25,13 @@ public class MainApplicationXL extends Application {
 		}
 	}
 
-	public static void main(String[] args) throws InterruptedException {
-		System.out.println(
-				" __________________________\n" + "/\\                         \\\n" + "\\_| WELCOME TO SYSXL       |\n"
-						+ "  |                        |\n" + "  | Version: " + version.getVersion() + " |\n"
-						+ "  |   _____________________|_\n" + "   \\_/_______________________/\n");
+	public static void main(String[] args) throws InterruptedException, IOException {
+		System.out.println(" ____________________________\n"
+						 + "/\\                           \\\n"
+						 + "\\_| Welcome to SysXL         |\n"
+						 + "  |  Version: SysXL - 22.02.1|\n"
+						 + "  |   _______________________|_\n"
+						 + "   \\_/_________________________/");
 		launch(args);
 	}
 }

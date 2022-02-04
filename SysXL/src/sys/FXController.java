@@ -5,7 +5,11 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URL;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.ResourceBundle;
 import org.apache.poi.hssf.usermodel.HSSFRow;
@@ -58,16 +62,16 @@ public class FXController implements Initializable {
 
 	static SysXL version = new SysXL();
 
-	private int line = 1; // excel lines.
+	private int line = 1; /* excel lines */
 
-	private int percent = 0; // control of the import.
+	private int percent = 0; /* control of the import */
 
-	Integer year = Calendar.getInstance().get(Calendar.YEAR); // current year.
+	private Integer year = Calendar.getInstance().get(Calendar.YEAR); /* current year */
 
-	Integer year2 = 2017; // first year of the Sysfogo system.
+	private Integer year2 = 2017; /* first year of the Sysfogo system */
 
-	ObservableList<String> SelectMonth = FXCollections.observableArrayList("Escolha", "Janeiro", "Fevereiro", "Março",
-			"Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"); // months
+	private ObservableList<String> SelectMonth = FXCollections.observableArrayList("Escolha", "Janeiro", "Fevereiro",
+			"Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"); // months
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -76,12 +80,12 @@ public class FXController implements Initializable {
 
 		ObservableList<String> SelectYear = FXCollections.observableArrayList();
 		while (year2 <= year) {
-			chcYear.getItems().add(year2.toString()); /* year will load automatically. */
+			chcYear.getItems().add(year2.toString()); /* year in choicebox will load automatically */
 			year2++;
 		}
 		chcMonth.getItems().addAll(SelectMonth);
 		chcYear.getItems().addAll(SelectYear);
-		lblAnoAutomatico.setText(year.toString());
+		lblAnoAutomatico.setText(year.toString()); /* label added current year automatically */
 	}
 
 	public void actionDonate() throws Exception {
