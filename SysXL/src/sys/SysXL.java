@@ -14,7 +14,7 @@ public class SysXL {
 	public void fileTxt(int numberLine) {
 
 		try {
-			File text = new File("C:\\Program Files\\SysXL\\file.txt");
+			File text = new File("/home/matheus/SysXL/file.txt");
 			/*
 			 * file.txt will save important information, such as database information and
 			 * the folder where the file will be saved.
