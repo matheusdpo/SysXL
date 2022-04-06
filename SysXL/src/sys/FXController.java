@@ -1,5 +1,10 @@
 package sys;
 
+import static sys.SysXL.alertSystem;
+import static sys.SysXL.fileTxt;
+import static sys.SysXL.getValueTxt;
+import static sys.SysXL.getVersion;
+
 import java.awt.Desktop;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -12,9 +17,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.ResourceBundle;
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -60,15 +63,13 @@ public class FXController implements Initializable {
 	 * common variables.
 	 */
 
-	static SysXL version = new SysXL();
-
 	private int line = 1; /* excel lines */
 
 	private int percent = 0; /* control of the import */
 
-	private Integer year = Calendar.getInstance().get(Calendar.YEAR); /* current year */
+	private Integer currentYear = Calendar.getInstance().get(Calendar.YEAR); /* current year */
 
-	private Integer year2 = 2017; /* first year of the Sysfogo system */
+	private Integer startYear = 2017; /* first year of the Sysfogo system */
 
 	private ObservableList<String> SelectMonth = FXCollections.observableArrayList("Escolha", "Janeiro", "Fevereiro",
 			"Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"); // months
@@ -79,13 +80,16 @@ public class FXController implements Initializable {
 		chcYear.setValue("Escolha");
 
 		ObservableList<String> SelectYear = FXCollections.observableArrayList();
-		while (year2 <= year) {
-			chcYear.getItems().add(year2.toString()); /* year in choicebox will load automatically */
-			year2++;
+
+		while (startYear <= currentYear) {
+			chcYear.getItems().add(startYear.toString()); /* year in choicebox will load automatically */
+			startYear++;
 		}
+
 		chcMonth.getItems().addAll(SelectMonth);
 		chcYear.getItems().addAll(SelectYear);
-		lblAnoAutomatico.setText(year.toString()); /* label added current year automatically */
+
+		lblAnoAutomatico.setText(currentYear.toString()); /* label added current year automatically */
 	}
 
 	public void actionDonate() throws Exception {
@@ -94,8 +98,7 @@ public class FXController implements Initializable {
 	}
 
 	public void actionHelp() throws Exception {
-		SysXL actionHelp = new SysXL();
-		actionHelp.alertSystem(" - Help", "ATENÇÃO!",
+		alertSystem(" - Help", "ATENÇÃO!",
 				"Para editar login, senha, IP ou Diretorio:"
 						+ "\n1. Vá em C:\\Arquivo de Programa\\SysXL\\ e abra o arquivo 'file.txt';"
 						+ "\n2. Edite os parâmetros que deseja.\n" + "\nObservações:"
@@ -107,27 +110,23 @@ public class FXController implements Initializable {
 	public void actionConverter() throws IOException, InterruptedException {
 
 		/* get username from file.txt */
-		SysXL callingUser = new SysXL();
-		callingUser.fileTxt(1);
-		String userCalled = callingUser.getValueTxt();
+		fileTxt(1);
+		String userCalled = getValueTxt();
 		String user = userCalled;
 
 		/* get password from file.txt */
-		SysXL callingPw = new SysXL();
-		callingPw.fileTxt(2);
-		String userPw = callingPw.getValueTxt();
+		fileTxt(2);
+		String userPw = getValueTxt();
 		String passwd = userPw;
 
 		/* get IP from file.txt */
-		SysXL callingIP = new SysXL();
-		callingIP.fileTxt(0);
-		String ipCalled = callingIP.getValueTxt();
+		fileTxt(0);
+		String ipCalled = getValueTxt();
 		String url = ipCalled;
 
 		/* get the directory from the file.txt */
-		SysXL callingPath = new SysXL();
-		callingPath.fileTxt(3);
-		String pathCalled = callingPath.getValueTxt();
+		fileTxt(3);
+		String pathCalled = getValueTxt();
 
 		int monthQuery = chcMonth.getSelectionModel().getSelectedIndex(); /* get month selected */
 
@@ -223,13 +222,12 @@ public class FXController implements Initializable {
 				}
 
 				System.out.println("Done!!!\n");
-				SysXL done = new SysXL();
-				done.alertSystem(" - Concluído", "Exportação concluída com sucesso =)",
+				alertSystem(" - Concluído", "Exportação concluída com sucesso =)",
 						"Seu arquivo foi exportado para o diretorio:\n\n");
 				System.out.println("             .--,       .--,\n" + "            ( (  \\.---./  ) )\n"
 						+ "             '.__/o   o\\__.'\n" + "                {=  ^  =}\n"
 						+ "                 >  -  <\n" + " ____________.\"\"`-------`\"\".____________\n"
-						+ "/                                       \\\n" + "\\ Thanks for using " + version.getVersion()
+						+ "/                                       \\\n" + "\\ Thanks for using " + getVersion()
 						+ "        /\n" + "/                                       \\\n"
 						+ "\\_______________________________________/\n" + "               ___)( )(___\n"
 						+ "              (((__) (__)))");
@@ -246,8 +244,7 @@ public class FXController implements Initializable {
 						+ "    |                       SELECTED FAILED!                  |\n"
 						+ "    |_________________________________________________________|\n" + "\n" + "\n" + "");
 
-				SysXL error1 = new SysXL();
-				error1.alertSystem(" - Erro de Banco de Dados", "Ops... temos um erro =(",
+				alertSystem(" - Erro de Banco de Dados", "Ops... temos um erro =(",
 						"A Select do banco de dados pode estar errada.\n\n"
 								+ "Verifique se você selecionou as informações corretas!");
 			}
@@ -263,8 +260,7 @@ public class FXController implements Initializable {
 					+ "    |                       CONNECTION FAILED                 |\n"
 					+ "    |_________________________________________________________|\n" + "\n" + "\n" + "");
 			e1.printStackTrace();
-			SysXL error2 = new SysXL();
-			error2.alertSystem(" - Erro de Conexão", "Ops... temos um erro =(",
+			alertSystem(" - Erro de Conexão", "Ops... temos um erro =(",
 					"Não foi possivel estabelecer uma conexão no banco de dados.");
 		}
 

@@ -1,6 +1,9 @@
 package sys;
 
+import static sys.SysXL.getVersion;
+
 import java.io.IOException;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -17,7 +20,7 @@ public class MainApplicationXL extends Application {
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("Layout.css").toExternalForm());
 			primaryStage.setScene(scene);
-			primaryStage.setTitle(version.getVersion());
+			primaryStage.setTitle(getVersion());
 			primaryStage.setResizable(false);
 			primaryStage.show();
 		} catch (Exception e) {
@@ -26,12 +29,9 @@ public class MainApplicationXL extends Application {
 	}
 
 	public static void main(String[] args) throws InterruptedException, IOException {
-		System.out.println(" ____________________________\n"
-						 + "/\\                           \\\n"
-						 + "\\_| Welcome to SysXL         |\n"
-						 + "  |  Version: SysXL - 22.02.1|\n"
-						 + "  |   _______________________|_\n"
-						 + "   \\_/_________________________/");
+		System.out.println(" ____________________________\n" + "/\\                           \\\n"
+				+ "\\_| Welcome to SysXL         |\n" + "  |  Version: " + getVersion() + "|\n"
+				+ "  |   _______________________|_\n" + "   \\_/_________________________/");
 		launch(args);
 	}
 }

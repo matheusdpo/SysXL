@@ -2,16 +2,17 @@ package sys;
 
 import java.io.File;
 import java.util.Scanner;
+
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
 public class SysXL {
-	private String valueTxt;
+	private static String valueTxt;
 
-	private static final String version = "SysXL - 22.02.1"; /* easy to change and show the version */
+	private static final String version = "SysXL - 22.03.1"; /* easy to change and show the version */
 
 	@SuppressWarnings("resource")
-	public void fileTxt(int numberLine) {
+	public static void fileTxt(int numberLine) {
 
 		try {
 			File text = new File("/home/matheus/SysXL/file.txt");
@@ -34,7 +35,7 @@ public class SysXL {
 
 	}
 
-	public void alertSystem(String title, String header, String content) {
+	public static void alertSystem(String title, String header, String content) {
 
 		/* Less code when i call a Warning */
 
@@ -46,11 +47,11 @@ public class SysXL {
 		alert.show();
 	}
 
-	public String getValueTxt() {
+	public static String getValueTxt() {
 		return valueTxt;
 	}
 
-	public String getVersion() {
+	public static String getVersion() {
 		return version;
 	}
 
