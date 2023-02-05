@@ -9,25 +9,24 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" styleClass="background" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.dolomia.sysxl.controller.SysXLController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" styleClass="background" stylesheets="@Layout.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.dolomia.sysxl.controller.SysXLController">
     <children>
-        <Button fx:id="btnConverter" defaultButton="true" layoutX="100.0" layoutY="287.0" mnemonicParsing="false" onAction="#actionConverter" prefHeight="100.0" prefWidth="200.0" styleClass="buttons" text="Converter" textAlignment="CENTER" textFill="WHITE">
+        <Button fx:id="btnConverter" defaultButton="true" layoutX="100.0" layoutY="297.0" mnemonicParsing="false" onAction="#actionConverter" prefHeight="100.0" prefWidth="200.0" styleClass="buttons" text="Converter" textAlignment="CENTER" textFill="WHITE">
             <font>
                 <Font size="16.0" />
             </font></Button>
-        <Hyperlink fx:id="hlDonate" layoutX="330.0" layoutY="464.0"  styleClass="hlink" text="Donate" textFill="WHITE" />
-        <Hyperlink fx:id="hlHelp" layoutX="181.0" layoutY="390.0"  styleClass="hlink" text="Help" textFill="WHITE" />
+        <Hyperlink fx:id="hlDonate" layoutX="330.0" layoutY="464.0" onAction="#openBrowser" styleClass="hlink" text="Donate" textFill="WHITE" />
         <ChoiceBox fx:id="chcMonth" layoutX="24.0" layoutY="226.0" prefWidth="150.0" styleClass="cboxes" />
         <ChoiceBox fx:id="chcYear" layoutX="226.0" layoutY="226.0" prefWidth="150.0" styleClass="cboxes" />
-        <Label fx:id="lblMes" layoutX="82.0" layoutY="204.0" styleClass="labels" text="Mês:" textFill="WHITE">
+        <Label fx:id="lblMes" layoutX="82.0" layoutY="199.0" styleClass="labels" text="Mês:" textFill="WHITE">
             <font>
                 <Font name="Heebo Regular" size="16.0" />
             </font></Label>
-        <Label fx:id="lblAno" layoutX="286.0" layoutY="204.0" styleClass="labels" text="Ano:" textFill="WHITE">
+        <Label fx:id="lblAno" layoutX="286.0" layoutY="199.0" styleClass="labels" text="Ano:" textFill="WHITE">
             <font>
                 <Font name="Heebo Regular" size="16.0" />
             </font></Label>
-        <Label fx:id="lblAnoAutomatico" layoutX="184.0" layoutY="165.0" styleClass="labels" text="0000" textFill="WHITE">
+        <Label fx:id="lblAnoAutomatico" layoutX="184.0" layoutY="175.0" styleClass="labels" text="0000" textFill="WHITE">
             <font>
                 <Font name="Heebo Regular" size="16.0" />
             </font></Label>
@@ -37,7 +36,7 @@
             </font></Label>
         <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="102.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@img.png" />
+                <Image url="@../../../../../images/img.png" />
             </image>
         </ImageView>
     </children>
