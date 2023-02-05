@@ -1,0 +1,36 @@
+.background {
+	-fx-background-color: #1e1e1e;
+}
+
+.buttons {
+	-fx-background-color: #27156a;
+	-fx-background-radius: 20.0px;
+}
+
+.button:hover{
+	-fx-background-color: #39258a;
+}
+
+.cboxes {
+	-fx-background-color: #27156a;
+	-fx-mark-color: #F57C1E;
+}
+
+.context-menu{
+	-fx-background-color: #27156a;
+}
+
+.choice-box .menu-item:focused {
+	-fx-background-color: #F57C1E;
+}
+.choice-box .menu-item > .label, .hlink:visited, .cboxes>.label {
+	-fx-text-fill: #FFFFFF;
+}
+
+.labels {
+
+}
+
+.hlink:hover {
+	-fx-text-fill: #05d6dd;
+}

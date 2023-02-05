@@ -1,0 +1,214 @@
+2023-02-05 15:04:42,755 ERROR b.c.d.s.u.LogUtils [main] aaaa
+2023-02-05 15:26:45,127 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] The application has been started.
+2023-02-05 15:30:35,460 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] The application has been started.
+2023-02-05 15:30:41,843 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Button converted has been pressed
+2023-02-05 15:31:37,241 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] The application has been started.
+2023-02-05 15:31:39,694 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Button converted has been pressed
+2023-02-05 15:32:12,683 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] The application has been started.
+2023-02-05 15:32:14,207 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Button converted has been pressed
+2023-02-05 15:32:14,208 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Month: Escolha
+2023-02-05 15:32:14,209 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Year: Escolha
+2023-02-05 15:32:14,211 ERROR b.c.d.s.u.LogUtils [JavaFX Application Thread] User has been chosen an invalid option.
+2023-02-05 15:32:42,619 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] The application has been started.
+2023-02-05 15:32:44,534 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Button converted has been pressed
+2023-02-05 15:32:44,534 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Month: Escolha
+2023-02-05 15:32:44,535 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Year: Escolha
+2023-02-05 15:32:44,544 ERROR b.c.d.s.u.LogUtils [JavaFX Application Thread] User has been chosen an invalid option.
+2023-02-05 15:32:49,517 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Button converted has been pressed
+2023-02-05 15:32:49,517 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Month: Escolha
+2023-02-05 15:32:49,518 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Year: Escolha
+2023-02-05 15:32:49,518 ERROR b.c.d.s.u.LogUtils [JavaFX Application Thread] User has been chosen an invalid option.
+2023-02-05 15:32:51,373 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Button converted has been pressed
+2023-02-05 15:32:51,374 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Month: Escolha
+2023-02-05 15:32:51,374 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Year: 2018
+2023-02-05 15:32:51,375 ERROR b.c.d.s.u.LogUtils [JavaFX Application Thread] User has been chosen an invalid option.
+2023-02-05 15:33:03,317 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Button converted has been pressed
+2023-02-05 15:33:03,319 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Month: Janeiro
+2023-02-05 15:33:03,319 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Year: 2017
+2023-02-05 15:33:03,320 ERROR b.c.d.s.u.LogUtils [JavaFX Application Thread] User has been chosen an invalid option.
+2023-02-05 15:33:23,326 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Button converted has been pressed
+2023-02-05 15:33:23,326 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Month: Maio
+2023-02-05 15:33:23,326 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Year: 2017
+2023-02-05 15:33:23,327 ERROR b.c.d.s.u.LogUtils [JavaFX Application Thread] User has been chosen an invalid option.
+2023-02-05 15:33:43,866 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] The application has been started.
+2023-02-05 15:33:53,400 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Button converted has been pressed
+2023-02-05 15:33:53,401 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Month: Janeiro
+2023-02-05 15:33:53,402 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Year: 2017
+2023-02-05 15:34:30,630 ERROR b.c.d.s.u.LogUtils [JavaFX Application Thread] User has been chosen an invalid option.
+2023-02-05 15:34:35,831 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] The application has been started.
+2023-02-05 15:34:43,169 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Button converted has been pressed
+2023-02-05 15:34:43,170 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Month: Abril
+2023-02-05 15:34:43,171 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Year: Escolha
+2023-02-05 15:34:52,726 ERROR b.c.d.s.u.LogUtils [JavaFX Application Thread] User has been chosen an invalid option.
+2023-02-05 15:35:02,715 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] The application has been started.
+2023-02-05 15:35:05,169 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Button converted has been pressed
+2023-02-05 15:35:05,170 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Month: Escolha
+2023-02-05 15:35:05,170 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Year: 2017
+2023-02-05 15:35:05,173 ERROR b.c.d.s.u.LogUtils [JavaFX Application Thread] User has been chosen an invalid option.
+2023-02-05 15:35:07,807 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Button converted has been pressed
+2023-02-05 15:35:07,808 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Month: Janeiro
+2023-02-05 15:35:07,808 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Year: 2017
+2023-02-05 15:35:07,824 TRACE b.c.d.s.u.LogUtils [Thread-3] Capturing datas.
+2023-02-05 15:35:07,832 TRACE b.c.d.s.u.LogUtils [Thread-3] ====================[DOLOMIADB -> CONNECTED!]====================
+2023-02-05 15:35:07,833 TRACE b.c.d.s.u.LogUtils [Thread-3] Trying to connect database...
+2023-02-05 15:35:07,834 TRACE b.c.d.s.u.LogUtils [Thread-3] Url: jdbc:mysql://localhost:3306/sysfogo
+2023-02-05 15:35:07,834 TRACE b.c.d.s.u.LogUtils [Thread-3] User: root
+2023-02-05 15:35:07,835 TRACE b.c.d.s.u.LogUtils [Thread-3] Password: 6331
+2023-02-05 15:35:08,500 TRACE b.c.d.s.u.LogUtils [Thread-3] Creating Excel File
+2023-02-05 15:35:08,501 TRACE b.c.d.s.u.LogUtils [Thread-3] Path -> C:\Yank\01-2017 IIS.xlsx
+2023-02-05 15:36:03,194 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] The application has been started.
+2023-02-05 15:36:07,049 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Button converted has been pressed
+2023-02-05 15:36:07,050 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Month: Março
+2023-02-05 15:36:07,050 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Year: 2019
+2023-02-05 15:36:07,054 TRACE b.c.d.s.u.LogUtils [TaskExcel] Capturing datas.
+2023-02-05 15:36:07,058 TRACE b.c.d.s.u.LogUtils [TaskExcel] ====================[DOLOMIADB -> CONNECTED!]====================
+2023-02-05 15:36:07,058 TRACE b.c.d.s.u.LogUtils [TaskExcel] Trying to connect database...
+2023-02-05 15:36:07,059 TRACE b.c.d.s.u.LogUtils [TaskExcel] Url: jdbc:mysql://localhost:3306/sysfogo
+2023-02-05 15:36:07,060 TRACE b.c.d.s.u.LogUtils [TaskExcel] User: root
+2023-02-05 15:36:07,061 TRACE b.c.d.s.u.LogUtils [TaskExcel] Password: 6331
+2023-02-05 15:36:07,678 TRACE b.c.d.s.u.LogUtils [TaskExcel] Creating Excel File
+2023-02-05 15:36:07,678 TRACE b.c.d.s.u.LogUtils [TaskExcel] Path -> C:\Yank\03-2019 IIS.xlsx
+2023-02-05 15:36:53,741 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Button converted has been pressed
+2023-02-05 15:36:53,741 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Month: Março
+2023-02-05 15:36:53,742 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Year: 2019
+2023-02-05 15:36:53,742 TRACE b.c.d.s.u.LogUtils [TaskExcel] Capturing datas.
+2023-02-05 15:36:53,743 TRACE b.c.d.s.u.LogUtils [TaskExcel] ====================[DOLOMIADB -> CONNECTED!]====================
+2023-02-05 15:36:53,743 TRACE b.c.d.s.u.LogUtils [TaskExcel] Trying to connect database...
+2023-02-05 15:36:53,744 TRACE b.c.d.s.u.LogUtils [TaskExcel] Url: jdbc:mysql://localhost:3306/sysfogo
+2023-02-05 15:36:53,744 TRACE b.c.d.s.u.LogUtils [TaskExcel] User: root
+2023-02-05 15:36:53,745 TRACE b.c.d.s.u.LogUtils [TaskExcel] Password: 6331
+2023-02-05 15:36:53,779 TRACE b.c.d.s.u.LogUtils [TaskExcel] Creating Excel File
+2023-02-05 15:36:53,779 TRACE b.c.d.s.u.LogUtils [TaskExcel] Path -> C:\Yank\03-2019 IIS.xlsx
+2023-02-05 15:37:22,878 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Button converted has been pressed
+2023-02-05 15:37:22,879 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Month: Março
+2023-02-05 15:37:22,879 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Year: 2019
+2023-02-05 15:37:22,880 TRACE b.c.d.s.u.LogUtils [TaskExcel] Capturing datas.
+2023-02-05 15:37:22,881 TRACE b.c.d.s.u.LogUtils [TaskExcel] ====================[DOLOMIADB -> CONNECTED!]====================
+2023-02-05 15:37:22,882 TRACE b.c.d.s.u.LogUtils [TaskExcel] Trying to connect database...
+2023-02-05 15:37:22,882 TRACE b.c.d.s.u.LogUtils [TaskExcel] Url: jdbc:mysql://localhost:3306/sysfogo
+2023-02-05 15:37:22,883 TRACE b.c.d.s.u.LogUtils [TaskExcel] User: root
+2023-02-05 15:37:22,884 TRACE b.c.d.s.u.LogUtils [TaskExcel] Password: 6331
+2023-02-05 15:37:22,918 TRACE b.c.d.s.u.LogUtils [TaskExcel] Creating Excel File
+2023-02-05 15:37:22,918 TRACE b.c.d.s.u.LogUtils [TaskExcel] Path -> C:\Yank\03-2019 IIS.xlsx
+2023-02-05 15:38:59,466 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] The application has been started.
+2023-02-05 15:39:03,129 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Button converted has been pressed
+2023-02-05 15:39:03,130 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Month: Janeiro
+2023-02-05 15:39:03,131 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Year: 2017
+2023-02-05 15:39:03,134 TRACE b.c.d.s.u.LogUtils [TaskExcel] Capturing datas.
+2023-02-05 15:39:03,153 TRACE b.c.d.s.u.LogUtils [TaskExcel] ====================[DOLOMIADB -> CONNECTED!]====================
+2023-02-05 15:39:03,154 TRACE b.c.d.s.u.LogUtils [TaskExcel] Url: jdbc:mysql://localhost:3306/sysfogo
+2023-02-05 15:39:03,155 TRACE b.c.d.s.u.LogUtils [TaskExcel] User: root
+2023-02-05 15:39:03,155 TRACE b.c.d.s.u.LogUtils [TaskExcel] Password: 6331
+2023-02-05 15:39:03,686 TRACE b.c.d.s.u.LogUtils [TaskExcel] Creating Excel File
+2023-02-05 15:39:03,686 TRACE b.c.d.s.u.LogUtils [TaskExcel] Path -> C:\Yank\01-2017 IIS.xlsx
+2023-02-05 15:39:04,128 TRACE b.c.d.s.u.LogUtils [TaskExcel] Excel has been created successfully
+2023-02-05 15:45:02,337 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] The application has been started.
+2023-02-05 15:45:06,177 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Button converted has been pressed
+2023-02-05 15:45:06,178 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Month: Fevereiro
+2023-02-05 15:45:06,178 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Year: 2019
+2023-02-05 15:45:06,181 TRACE b.c.d.s.u.LogUtils [TaskExcel] Capturing datas.
+2023-02-05 15:45:06,185 TRACE b.c.d.s.u.LogUtils [TaskExcel] ====================[DOLOMIADB -> CONNECTED!]====================
+2023-02-05 15:45:06,186 TRACE b.c.d.s.u.LogUtils [TaskExcel] Url: jdbc:mysql://localhost:3306/sysfogo
+2023-02-05 15:45:06,187 TRACE b.c.d.s.u.LogUtils [TaskExcel] User: root
+2023-02-05 15:45:06,188 TRACE b.c.d.s.u.LogUtils [TaskExcel] Password: 6331
+2023-02-05 15:45:06,731 TRACE b.c.d.s.u.LogUtils [TaskExcel] Creating Excel File
+2023-02-05 15:45:06,731 TRACE b.c.d.s.u.LogUtils [TaskExcel] Path -> C:\Yank\02-2019 IIS.xlsx
+2023-02-05 15:45:07,160 TRACE b.c.d.s.u.LogUtils [TaskExcel] Excel has been created successfully
+2023-02-05 15:45:13,525 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Button converted has been pressed
+2023-02-05 15:45:13,525 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Month: Fevereiro
+2023-02-05 15:45:13,525 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Year: 2019
+2023-02-05 15:45:13,526 TRACE b.c.d.s.u.LogUtils [TaskExcel] Capturing datas.
+2023-02-05 15:45:13,527 TRACE b.c.d.s.u.LogUtils [TaskExcel] ====================[DOLOMIADB -> CONNECTED!]====================
+2023-02-05 15:45:13,528 TRACE b.c.d.s.u.LogUtils [TaskExcel] Url: jdbc:mysql://localhost:3306/sysfogo
+2023-02-05 15:45:13,529 TRACE b.c.d.s.u.LogUtils [TaskExcel] User: root
+2023-02-05 15:45:13,530 TRACE b.c.d.s.u.LogUtils [TaskExcel] Password: 6331
+2023-02-05 15:45:13,571 TRACE b.c.d.s.u.LogUtils [TaskExcel] Creating Excel File
+2023-02-05 15:45:13,571 TRACE b.c.d.s.u.LogUtils [TaskExcel] Path -> C:\Yank\02-2019 IIS.xlsx
+2023-02-05 15:45:13,614 TRACE b.c.d.s.u.LogUtils [TaskExcel] Excel has been created successfully
+2023-02-05 15:45:33,019 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] The application has been started.
+2023-02-05 15:45:35,792 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Button converted has been pressed
+2023-02-05 15:45:35,793 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Month: Fevereiro
+2023-02-05 15:45:35,793 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Year: 2018
+2023-02-05 15:45:35,797 TRACE b.c.d.s.u.LogUtils [TaskExcel] Capturing datas.
+2023-02-05 15:45:35,801 TRACE b.c.d.s.u.LogUtils [TaskExcel] ====================[DOLOMIADB -> CONNECTED!]====================
+2023-02-05 15:45:35,802 TRACE b.c.d.s.u.LogUtils [TaskExcel] Url: jdbc:mysql://localhost:3306/sysfogo
+2023-02-05 15:45:35,804 TRACE b.c.d.s.u.LogUtils [TaskExcel] User: root
+2023-02-05 15:45:35,805 TRACE b.c.d.s.u.LogUtils [TaskExcel] Password: 6331
+2023-02-05 15:45:36,349 TRACE b.c.d.s.u.LogUtils [TaskExcel] Creating Excel File
+2023-02-05 15:45:36,350 TRACE b.c.d.s.u.LogUtils [TaskExcel] Path -> C:\Yank\02-2018 IIS.xlsx
+2023-02-05 15:45:36,841 TRACE b.c.d.s.u.LogUtils [TaskExcel] Excel has been created successfully
+2023-02-05 15:51:06,684 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] The application has been started.
+2023-02-05 15:51:10,046 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Button converted has been pressed
+2023-02-05 15:51:10,047 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Month: Janeiro
+2023-02-05 15:51:10,047 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Year: 2019
+2023-02-05 15:51:10,049 TRACE b.c.d.s.u.LogUtils [TaskExcel] Capturing datas.
+2023-02-05 15:51:10,051 TRACE b.c.d.s.u.LogUtils [TaskExcel] ====================[DOLOMIADB -> CONNECTED!]====================
+2023-02-05 15:51:10,053 TRACE b.c.d.s.u.LogUtils [TaskExcel] Url: jdbc:mysql://localhost:3306/sysfogo
+2023-02-05 15:51:10,053 TRACE b.c.d.s.u.LogUtils [TaskExcel] User: root
+2023-02-05 15:51:10,054 TRACE b.c.d.s.u.LogUtils [TaskExcel] Password: 6331
+2023-02-05 15:51:10,599 TRACE b.c.d.s.u.LogUtils [TaskExcel] Creating Excel File
+2023-02-05 15:51:10,600 TRACE b.c.d.s.u.LogUtils [TaskExcel] Path -> C:\Yank\01-2019 IIS.xlsx
+2023-02-05 15:51:11,036 TRACE b.c.d.s.u.LogUtils [TaskExcel] Excel has been created successfully
+2023-02-05 15:51:18,380 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Button converted has been pressed
+2023-02-05 15:51:18,381 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Month: Janeiro
+2023-02-05 15:51:18,381 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Year: 2019
+2023-02-05 15:51:18,382 TRACE b.c.d.s.u.LogUtils [TaskExcel] Capturing datas.
+2023-02-05 15:51:18,384 TRACE b.c.d.s.u.LogUtils [TaskExcel] ====================[DOLOMIADB -> CONNECTED!]====================
+2023-02-05 15:51:18,385 TRACE b.c.d.s.u.LogUtils [TaskExcel] Url: jdbc:mysql://localhost:3306/sysfogo
+2023-02-05 15:51:18,386 TRACE b.c.d.s.u.LogUtils [TaskExcel] User: root
+2023-02-05 15:51:18,387 TRACE b.c.d.s.u.LogUtils [TaskExcel] Password: 6331
+2023-02-05 15:51:18,423 TRACE b.c.d.s.u.LogUtils [TaskExcel] Creating Excel File
+2023-02-05 15:51:18,423 TRACE b.c.d.s.u.LogUtils [TaskExcel] Path -> C:\Yank\01-2019 IIS.xlsx
+2023-02-05 15:51:18,474 TRACE b.c.d.s.u.LogUtils [TaskExcel] Excel has been created successfully
+2023-02-05 16:02:30,025 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] The application has been started.
+2023-02-05 16:02:31,983 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Button converted has been pressed
+2023-02-05 16:02:31,984 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Month: Escolha
+2023-02-05 16:02:31,985 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Year: Escolha
+2023-02-05 16:02:32,000 ERROR b.c.d.s.u.LogUtils [JavaFX Application Thread] User has been chosen an invalid option.
+2023-02-05 16:02:34,872 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Button converted has been pressed
+2023-02-05 16:02:34,872 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Month: Março
+2023-02-05 16:02:34,873 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Year: 2018
+2023-02-05 16:02:34,876 TRACE b.c.d.s.u.LogUtils [TaskExcel] Capturing datas.
+2023-02-05 16:02:34,880 TRACE b.c.d.s.u.LogUtils [TaskExcel] ====================[DOLOMIADB -> CONNECTED!]====================
+2023-02-05 16:02:34,882 TRACE b.c.d.s.u.LogUtils [TaskExcel] Url: jdbc:mysql://localhost:3306/sysfogo
+2023-02-05 16:02:34,883 TRACE b.c.d.s.u.LogUtils [TaskExcel] User: root
+2023-02-05 16:02:34,884 TRACE b.c.d.s.u.LogUtils [TaskExcel] Password: 6331
+2023-02-05 16:02:35,443 TRACE b.c.d.s.u.LogUtils [TaskExcel] Creating Excel File
+2023-02-05 16:02:35,444 TRACE b.c.d.s.u.LogUtils [TaskExcel] Path -> C:\Yank\03-2018 IIS.xlsx
+2023-02-05 16:02:35,954 TRACE b.c.d.s.u.LogUtils [TaskExcel] Excel has been created successfully
+2023-02-05 16:08:47,191 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] The application has been started.
+2023-02-05 16:08:50,564 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Button converted has been pressed
+2023-02-05 16:08:50,564 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Month: Março
+2023-02-05 16:08:50,564 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Year: 2019
+2023-02-05 16:08:50,571 TRACE b.c.d.s.u.LogUtils [TaskExcel] Capturing datas.
+2023-02-05 16:08:50,576 TRACE b.c.d.s.u.LogUtils [TaskExcel] ====================[DOLOMIADB -> CONNECTED!]====================
+2023-02-05 16:08:50,576 TRACE b.c.d.s.u.LogUtils [TaskExcel] Url: jdbc:mysql://localhost:3306/sysfogo
+2023-02-05 16:08:50,578 TRACE b.c.d.s.u.LogUtils [TaskExcel] User: root
+2023-02-05 16:08:50,579 TRACE b.c.d.s.u.LogUtils [TaskExcel] Password: 6331
+2023-02-05 16:08:58,734 TRACE b.c.d.s.u.LogUtils [TaskExcel] Creating Excel File
+2023-02-05 16:08:58,734 TRACE b.c.d.s.u.LogUtils [TaskExcel] Path -> C:\Yank\03-2019 IIS.xlsx
+2023-02-05 16:08:59,262 TRACE b.c.d.s.u.LogUtils [TaskExcel] Excel has been created successfully
+2023-02-05 16:14:12,169 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] The application has been started.
+2023-02-05 16:14:15,129 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Button converted has been pressed
+2023-02-05 16:14:15,130 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Month: Fevereiro
+2023-02-05 16:14:15,130 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Year: 2019
+2023-02-05 16:14:15,132 TRACE b.c.d.s.u.LogUtils [TaskExcel] Capturing datas.
+2023-02-05 16:14:15,134 TRACE b.c.d.s.u.LogUtils [TaskExcel] ====================[DOLOMIADB -> CONNECTED!]====================
+2023-02-05 16:14:15,134 TRACE b.c.d.s.u.LogUtils [TaskExcel] Url: jdbc:mysql://localhost:3306/sysfogo
+2023-02-05 16:14:15,134 TRACE b.c.d.s.u.LogUtils [TaskExcel] User: root
+2023-02-05 16:14:15,134 TRACE b.c.d.s.u.LogUtils [TaskExcel] Password: 6331
+2023-02-05 16:14:15,733 TRACE b.c.d.s.u.LogUtils [TaskExcel] Creating Excel File
+2023-02-05 16:14:15,733 TRACE b.c.d.s.u.LogUtils [TaskExcel] Path -> C:\Yank\02-2019 IIS.xlsx
+2023-02-05 16:14:16,290 TRACE b.c.d.s.u.LogUtils [TaskExcel] Excel has been created successfully
+2023-02-05 16:15:24,824 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] The application has been started.
+2023-02-05 16:15:31,948 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Button converted has been pressed
+2023-02-05 16:15:31,948 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Month: Março
+2023-02-05 16:15:31,949 TRACE b.c.d.s.u.LogUtils [JavaFX Application Thread] Year: 2018
+2023-02-05 16:15:31,952 TRACE b.c.d.s.u.LogUtils [TaskExcel] Capturing datas.
+2023-02-05 16:15:31,955 TRACE b.c.d.s.u.LogUtils [TaskExcel] ====================[DOLOMIADB -> CONNECTED!]====================
+2023-02-05 16:15:31,956 TRACE b.c.d.s.u.LogUtils [TaskExcel] Url: jdbc:mysql://localhost:3306/sysfogo
+2023-02-05 16:15:31,957 TRACE b.c.d.s.u.LogUtils [TaskExcel] User: root
+2023-02-05 16:15:31,958 TRACE b.c.d.s.u.LogUtils [TaskExcel] Password: 6331
+2023-02-05 16:15:32,530 TRACE b.c.d.s.u.LogUtils [TaskExcel] Creating Excel File
+2023-02-05 16:15:32,531 TRACE b.c.d.s.u.LogUtils [TaskExcel] Path -> C:\Yank\03-2018 IIS.xlsx
+2023-02-05 16:15:33,019 TRACE b.c.d.s.u.LogUtils [TaskExcel] Excel has been created successfully
