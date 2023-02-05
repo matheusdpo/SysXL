@@ -1,16 +1,22 @@
 package br.com.dolomia.sysxl.excel;
 
 import br.com.dolomia.sysxl.bean.ExcelBean;
+import br.com.dolomia.sysxl.utils.LogUtils;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class ExcelFileHandler {
 
-    public static void init(ExcelBean excelBean, String path) {
+    public static void init(ExcelBean excelBean, String path) throws IOException {
+        LogUtils.registerLog("Creating Excel File");
+        LogUtils.registerLog("Path -> " + path);
+
         XSSFWorkbook workbook = null;
+        FileOutputStream fos;
         try {
             workbook = new XSSFWorkbook();
             XSSFSheet sheet = workbook.createSheet("Sysfogo");
@@ -36,17 +42,12 @@ public class ExcelFileHandler {
                 row.createCell(5).setCellValue(excelBean.getIis_embal().get(i - 1));
                 row.createCell(6).setCellValue(excelBean.getDat_exportacao().get(i - 1));
             }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
         } finally {
-            try {
-                FileOutputStream fileOut = new FileOutputStream(path);
-                workbook.write(fileOut);
-                fileOut.close();
-                workbook.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            fos = new FileOutputStream(path);
+            workbook.write(fos);
+            fos.close();
+            workbook.close();
+            LogUtils.registerLog("Excel has been created successfully");
         }
     }
 }
