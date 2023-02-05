@@ -1,17 +1,12 @@
 package br.com.dolomia.sysxl.controller;
 
-import br.com.dolomia.sysxl.bean.ExcelBean;
-import br.com.dolomia.sysxl.database.Datas;
-import br.com.dolomia.sysxl.excel.ExcelFileHandler;
-import br.com.dolomia.sysxl.utils.PathExcel;
+import br.com.dolomia.sysxl.thread.TaskExcel;
+import br.com.dolomia.sysxl.utils.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 
 import java.net.URL;
 import java.util.Calendar;
@@ -58,13 +53,37 @@ public class SysXLController implements Initializable {
 
         this.lblAnoAutomatico.setText(this.currentYear.toString());
     }
+
+    @FXML
     public void actionConverter() {
-        Integer monthSelected = this.chcMonth.getSelectionModel().getSelectedIndex();
 
-        Integer yearSelected = Integer.parseInt(this.chcYear.getValue());
+        LogUtils.registerLog("Button converted has been pressed");
 
-        ExcelBean excelBean = Datas.getDatas(monthSelected, yearSelected);
+        Integer monthIndex = this.chcMonth.getSelectionModel().getSelectedIndex();
 
-        ExcelFileHandler.init(excelBean, PathExcel.getPathExcel(monthSelected, yearSelected));
+        Integer yearIndex = this.chcYear.getSelectionModel().getSelectedIndex();
+
+        String monthValue = this.chcMonth.getValue();
+
+        String yearValue = this.chcYear.getValue();
+
+        LogUtils.registerLog("Month: " + monthValue);
+        LogUtils.registerLog("Year: " + yearValue);
+
+        if (monthIndex < 1 || yearIndex < 0) {
+            AlertScreen.getAlert("ESCOLHA UM VALOR", "Ops...", "Por favor, selecione um valor nos campos \"mês\" e \"ano\"", Alert.AlertType.INFORMATION);
+            LogUtils.registerError("User has been chosen an invalid option.");
+            return;
+        }
+
+        new Thread(new TaskExcel(monthIndex, Integer.parseInt(yearValue)), "TaskExcel").start();
+
+        AlertScreen.getAlertDone(monthValue, yearValue);
+    }
+
+    @FXML
+    public void openBrowser() {
+        PlaySong.play();
+        OpenBrowser.init();
     }
 }
