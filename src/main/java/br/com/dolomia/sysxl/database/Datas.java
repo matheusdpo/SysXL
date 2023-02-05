@@ -1,6 +1,9 @@
 package br.com.dolomia.sysxl.database;
 
 import br.com.dolomia.sysxl.bean.ExcelBean;
+import br.com.dolomia.sysxl.utils.AlertScreen;
+import br.com.dolomia.sysxl.utils.LogUtils;
+import javafx.scene.control.Alert;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,6 +13,8 @@ import java.util.List;
 public class Datas {
 
     public static ExcelBean getDatas(Integer monthSelected, Integer yearSelected) {
+
+        LogUtils.registerLog("Capturing datas.");
 
         ExcelBean excelBean = new ExcelBean();
 
@@ -43,6 +48,8 @@ public class Datas {
             excelBean.setNum_nf(listNumNF);
 
         } catch (SQLException e) {
+            AlertScreen.getAlert("ERRO", "ERRO AO CAPTURAR DADOS NO BANCO DE DADOS", e.getMessage(), Alert.AlertType.ERROR);
+            LogUtils.registerError("Error capturing datas -> " + e.getMessage());
             throw new RuntimeException(e);
         }
         return excelBean;
