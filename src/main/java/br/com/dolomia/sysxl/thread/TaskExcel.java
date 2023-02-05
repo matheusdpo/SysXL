@@ -25,6 +25,7 @@ public class TaskExcel implements Runnable{
 
         try {
             ExcelFileHandler.init(excelBean, PathExcel.getPathExcel(this.monthSelected, this.yearSelected));
+            AlertScreen.getAlertDone(this.monthSelected.toString(), this.yearSelected.toString());
         } catch (IOException e) {
             AlertScreen.getAlert("ERRO", "ERRO CRIAR ARQUIVO EXCEL", e.getMessage(), Alert.AlertType.ERROR);
             LogUtils.registerError("Error creating excel file -> " + e.getMessage());
