@@ -24,7 +24,7 @@ public class ConnectionDolomiaDB {
     }
 
     private static PreparedStatement getPreparedStatement(Integer monthSelected, Integer yearSelected) {
-        LogUtils.registerLog("====================[DOLOMIADB -> CONNECTED!]====================");
+        LogUtils.registerLog("====================[DOLOMIADB -> CONNECTING...]====================");
 
         try {
             return getConnection().prepareStatement(SelectDB.getSelectDB(monthSelected, yearSelected));
