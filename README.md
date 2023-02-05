@@ -16,4 +16,4 @@ This software is intended for internal use only by the Information Technology te
 This software is intended for internal use only by the Information Technology team at Sociedade Extrativa Dolomia Ltda. Usage instructions will be provided only to those responsible for this area.
 
 ## License
-This project is licensed under the MIT license. See [LICENSE](../SysXL/LICENSE) for more information.
+This project is licensed under the MIT license. See [LICENSE](../master/LICENSE) for more information.
