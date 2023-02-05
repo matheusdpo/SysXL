@@ -1,6 +1,7 @@
 package br.com.dolomia.sysxl.main;
 
 import br.com.dolomia.sysxl.utils.GetProperties;
+import br.com.dolomia.sysxl.utils.LogUtils;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -12,6 +13,7 @@ import java.io.IOException;
 public class SysXLApplication extends Application {
     @Override
     public void start(Stage stage) {
+        LogUtils.registerLog("The application has been started.");
         try {
             AnchorPane root = FXMLLoader.load(getClass().getResource("Layout.fxml"));
             Scene scene = new Scene(root);
@@ -26,6 +28,6 @@ public class SysXLApplication extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
 }
